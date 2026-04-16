@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onça-Pintada: A Majestade das Américas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="container nav-bar">
+            <div class="logo">BioJaguaretê</div>
+            <div class="accessibility-controls">
+                <button onclick="changeFontSize('increase')" aria-label="Aumentar fonte">A+</button>
+                <button onclick="changeFontSize('decrease')" aria-label="Diminuir fonte">A-</button>
+                <button onclick="toggleContrast()" id="contrast-toggle">Alto Contraste</button>
+            </div>
+        </nav>
+    </header>
 
+    <main>
+        <section id="home" class="hero reveal">
+            <div class="container">
+                <h1>Onça-Pintada</h1>
+                <p>O maior felino das Américas e um símbolo da biodiversidade brasileira.</p>
+                <a href="#galeria" class="btn">Explorar Galeria</a>
+            </div>
+        </section>
+
+        <section id="galeria" class="container reveal">
+            <h2>Galeria de Espécies</h2>
+            <div id="gallery-container" class="grid-layout">
+                </div>
+        </section>
+
+        <section id="info" class="container reveal">
+            <h2>Saiba Mais</h2>
+            <div id="accordion-container">
+                </div>
+        </section>
+    </main>
+
+    <footer class="container">
+        <p>&copy; 2023 Projeto Onça-Pintada. Focado em Conservação.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
