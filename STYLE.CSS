@@ -1,1 +1,77 @@
+/* --- DESIGN SYSTEM (:root) --- */
+:root {
+    --primary: #d4a017; /* Dourado Onça */
+    --secondary: #1a1a1a; /* Preto Profundo */
+    --bg: #f4f4f4;
+    --text: #333;
+    --radius: 12px;
+    --spacing: 2rem;
+    --transition: all 0.3s ease;
+}
 
+/* --- MODO ALTO CONTRASTE --- */
+body.high-contrast {
+    --primary: #ffff00;
+    --bg: #000;
+    --text: #fff;
+    --secondary: #fff;
+}
+
+/* --- RESET & BASE --- */
+* { margin: 0; padding: 0; box-box: border-box; }
+body { 
+    font-family: sans-serif; 
+    background-color: var(--bg); 
+    color: var(--text); 
+    line-height: 1.6;
+    transition: var(--transition);
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 var(--spacing); }
+
+/* --- GRID LAYOUT (Edite aqui para colunas) --- */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Mobile-First */
+    gap: var(--spacing);
+    margin-top: var(--spacing);
+}
+
+/* --- COMPONENTES --- */
+.card {
+    background: var(--secondary);
+    color: white;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    transition: transform 0.3s;
+}
+
+.card:hover { transform: translateY(-5px); }
+
+.accordion-item {
+    border-bottom: 1px solid var(--primary);
+    margin-bottom: 1rem;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 1rem;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+/* --- ANIMAÇÕES (Scroll Reveal) --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
