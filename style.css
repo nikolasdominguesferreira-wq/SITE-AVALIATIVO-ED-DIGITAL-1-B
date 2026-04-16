@@ -1,77 +1,106 @@
-/* --- DESIGN SYSTEM (:root) --- */
+/* --- VARIÁVEIS E TEMAS --- */
 :root {
-    --primary: #d4a017; /* Dourado Onça */
-    --secondary: #1a1a1a; /* Preto Profundo */
-    --bg: #f4f4f4;
-    --text: #333;
-    --radius: 12px;
-    --spacing: 2rem;
-    --transition: all 0.3s ease;
+    --primary: #335f45; /* Verde Agrícola */
+    --accent: #b27a2f;  /* Dourado Cevada */
+    --bg: #f8f3e7;      /* Bege Papel */
+    --surface: #ffffff;
+    --text: #2d241c;
+    --radius: 16px;
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* --- MODO ALTO CONTRASTE --- */
 body.high-contrast {
+    --bg: #000000;
+    --text: #ffffff;
+    --surface: #1a1a1a;
     --primary: #ffff00;
-    --bg: #000;
-    --text: #fff;
-    --secondary: #fff;
+    --accent: #00ff00;
 }
 
-/* --- RESET & BASE --- */
-* { margin: 0; padding: 0; box-box: border-box; }
+/* --- ESTILOS BASE --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 body { 
-    font-family: sans-serif; 
+    font-family: 'Segoe UI', system-ui, sans-serif; 
     background-color: var(--bg); 
-    color: var(--text); 
-    line-height: 1.6;
+    color: var(--text);
+    transition: background 0.5s;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.section-title { text-align: center; margin: 4rem 0 2rem; font-size: 2.5rem; color: var(--primary); }
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: center;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+/* --- GRID & CARDS --- */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card-visual {
+    background: var(--surface);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
     transition: var(--transition);
 }
 
-.container { max-width: 1100px; margin: 0 auto; padding: 0 var(--spacing); }
-
-/* --- GRID LAYOUT (Edite aqui para colunas) --- */
-.grid-layout {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Mobile-First */
-    gap: var(--spacing);
-    margin-top: var(--spacing);
+.card-visual:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-/* --- COMPONENTES --- */
-.card {
-    background: var(--secondary);
-    color: white;
-    padding: 1.5rem;
-    border-radius: var(--radius);
-    transition: transform 0.3s;
-}
-
-.card:hover { transform: translateY(-5px); }
-
-.accordion-item {
-    border-bottom: 1px solid var(--primary);
-    margin-bottom: 1rem;
-}
-
-.accordion-header {
+.card-visual img {
     width: 100%;
-    padding: 1rem;
-    background: none;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content { padding: 1.5rem; }
+
+/* --- TIMELINE --- */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+}
+
+.step-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: var(--surface);
+    padding: 2rem;
+    border-radius: var(--radius);
+    border-left: 5px solid var(--primary);
+}
+
+/* --- ANIMAÇÕES DE SCROLL --- */
+.reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* --- ACESSIBILIDADE --- */
+.accessibility-controls button {
+    background: var(--primary);
+    color: white;
     border: none;
-    text-align: left;
+    padding: 0.8rem;
+    border-radius: 50%;
     cursor: pointer;
-    font-weight: bold;
-    color: var(--primary);
-}
-
-/* --- ANIMAÇÕES (Scroll Reveal) --- */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+    margin-left: 0.5rem;
 }
