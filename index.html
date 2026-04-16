@@ -3,45 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Onça-Pintada: A Majestade das Américas</title>
+    <title>Do Campo ao Copo | Guarapuava</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
         <nav class="container nav-bar">
-            <div class="logo">BioJaguaretê</div>
+            <div class="logo"><strong>Agro</strong>Guarapuava</div>
             <div class="accessibility-controls">
-                <button onclick="changeFontSize('increase')" aria-label="Aumentar fonte">A+</button>
-                <button onclick="changeFontSize('decrease')" aria-label="Diminuir fonte">A-</button>
-                <button onclick="toggleContrast()" id="contrast-toggle">Alto Contraste</button>
+                <button onclick="changeFontSize('increase')" aria-label="Aumentar fonte"><i class="fas fa-plus"></i></button>
+                <button onclick="changeFontSize('decrease')" aria-label="Diminuir fonte"><i class="fas fa-minus"></i></button>
+                <button onclick="toggleContrast()" title="Alternar Alto Contraste"><i class="fas fa-adjust"></i></button>
             </div>
         </nav>
     </header>
 
     <main>
         <section id="home" class="hero reveal">
-            <div class="container">
-                <h1>Onça-Pintada</h1>
-                <p>O maior felino das Américas e um símbolo da biodiversidade brasileira.</p>
-                <a href="#galeria" class="btn">Explorar Galeria</a>
+            <div class="container hero-content">
+                <h1>Do Campo ao Copo</h1>
+                <p>A jornada sustentável da cevada ao malte no coração do Paraná.</p>
+                <div class="hero-btns">
+                    <a href="#jornada" class="btn-primary">Conhecer a Jornada</a>
+                    <a href="#sustentabilidade" class="btn-secondary">Sustentabilidade</a>
+                </div>
             </div>
         </section>
 
-        <section id="galeria" class="container reveal">
-            <h2>Galeria de Espécies</h2>
-            <div id="gallery-container" class="grid-layout">
+        <section id="jornada" class="container reveal">
+            <h2 class="section-title">A Cadeia Produtiva</h2>
+            <div id="timeline-container" class="timeline">
                 </div>
         </section>
 
-        <section id="info" class="container reveal">
-            <h2>Saiba Mais</h2>
-            <div id="accordion-container">
+        <section id="galeria" class="container reveal">
+            <h2 class="section-title">Galeria Visual</h2>
+            <div id="gallery-grid" class="grid-layout">
                 </div>
+        </section>
+
+        <section id="quiz" class="container reveal">
+            <div class="quiz-card">
+                <h2>Desafio do Malte</h2>
+                <p>Teste seus conhecimentos sobre a produção em Guarapuava.</p>
+                <div id="quiz-container">
+                    </div>
+                <button id="submit-quiz" class="btn-primary">Verificar Respostas</button>
+                <div id="quiz-result" class="result-box"></div>
+            </div>
         </section>
     </main>
 
-    <footer class="container">
-        <p>&copy; 2023 Projeto Onça-Pintada. Focado em Conservação.</p>
+    <footer>
+        <div class="container footer-grid">
+            <p>&copy; 2026 - NRE Guarapuava | Programação Paraná</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
